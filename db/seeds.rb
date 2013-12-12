@@ -14,7 +14,6 @@ def remove_comma_dollar_sign(row)
 end
 
 CSV.foreach(datafile, headers:true) do |row|
-  puts row.inspect
   row.each {|r| r[1] = remove_comma_dollar_sign(r[1])}
   TownHealthRecord.find_or_initialize_by(geography: row['Geography']) do |hr|
       hr.geography = row["Geography"]
@@ -37,4 +36,3 @@ CSV.foreach(datafile, headers:true) do |row|
   end
 
 end
-
