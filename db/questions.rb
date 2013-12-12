@@ -13,12 +13,3 @@ TownHealthRecord.select(:geography).where("geography != 'Massachusetts Total' AN
 #Omitting Boston, what town has the highest number of infant mortalities?
 TownHealthRecord.select(:geography).where("geography != 'Massachusetts Total' AND geography!= 'Boston'").order("number_of_infant_deaths_2005_2008 DESC").first
 
-
-
-
-
-TownHealthRecord
-.select(:geography)
-.where("geography != 'Massachusetts Total'")
-.order("ages_0to19_2005 DESC")
-.limit(3)
